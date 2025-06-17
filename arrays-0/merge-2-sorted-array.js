@@ -15,7 +15,7 @@ function mergeTwoSortedArrays(nums1, m, nums2, n) {
     k--;
   }
   while (j >= 0) {
-    nums1[k] = num2[j];
+    nums1[k] = nums2[j];
     j--;
     k--;
   }
