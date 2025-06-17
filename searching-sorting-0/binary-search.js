@@ -1,3 +1,5 @@
+// Time complexity - O(logn) , space complexity - O(n)
+
 var search = function (nums, target) {
   let l = 0;
   let r = nums.length - 1;
