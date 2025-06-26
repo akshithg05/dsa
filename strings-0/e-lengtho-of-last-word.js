@@ -26,7 +26,6 @@ var lengthOfLastWord = function (s) {
 var lengthOfLastWord = function (s) {
   let n = s.length - 1;
   let c = 0;
-  let flag = false;
 
   while (n >= 0) {
     if (s[n] !== " ") {
