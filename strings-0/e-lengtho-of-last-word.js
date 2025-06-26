@@ -21,3 +21,20 @@ var lengthOfLastWord = function (s) {
   }
   return c;
 };
+
+// 3. Single loop solution - Time comp - O(n), Space - O(1)
+var lengthOfLastWord = function (s) {
+  let n = s.length - 1;
+  let c = 0;
+  let flag = false;
+
+  while (n >= 0) {
+    if (s[n] !== " ") {
+      c++;
+    } else if (c > 0) {
+      break;
+    }
+    n--;
+  }
+  return c;
+};

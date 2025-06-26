@@ -5,6 +5,7 @@ class Node {
   }
 }
 
+// 1. Iterative solution
 function swapAdjacentNodes(head) {
   if (head === null || head.next === null) {
     return head;
@@ -25,4 +26,16 @@ function swapAdjacentNodes(head) {
     n = c && c.next;
   }
   return dummy.next;
+}
+
+// 2. recursive solution
+function swapRec(head){
+    if (!head || !head.next){
+        return head
+    }
+    let l = head
+    let r = l.next
+    l.next = swapRec(r.next)
+    r.next = l
+    return r
 }
