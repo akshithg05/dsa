@@ -1,3 +1,5 @@
+// TIme - O(n), space - O(n)
+
 var isIsomorphic = function (s, t) {
   let mapStoT = {};
   let mapTtoS = {};
