@@ -41,6 +41,8 @@ var strStr = function (haystack, needle) {
   return -1;
 };
 
+// Knuth- Morris - Pratt algorithm
+
 console.log(findIndex("sadbutsad", "sad"));
 console.log(findIndex("leetcode", "leeto"));
 console.log(findIndex("hello", "ll"));
