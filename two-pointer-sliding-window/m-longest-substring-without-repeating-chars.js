@@ -16,6 +16,9 @@ function longestSubstringNoRepeatBrute(s){
 }
 
 // Optimized solution with O(n) time complexity
+// Here max time complexity will be O(2n) as we are moving left as well
+// Therefore, total time complexity will be approximately O(n)
+
 function longestSubstringOptimized(s){
     let left = 0
     let maxLength = 0
