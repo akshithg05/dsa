@@ -1,3 +1,5 @@
+// Recursive approach
+
 var inorderTraversal = function(root) {
     let ans =[]
     function inorder(root){
@@ -9,3 +11,21 @@ var inorderTraversal = function(root) {
     inorder(root)
     return ans
 };
+
+// Iterative approach for inorder traversal
+
+function inorderIterative(root){
+    let ans =[]
+    let stack =[]
+    let curr = root
+    while(curr || stack.length){
+        while(curr){
+            stack.push(curr)
+            curr=curr.left
+        }
+        curr = stack.pop()
+        ans.push(curr.val)
+        curr=curr.right
+    }
+    return ans
+}
