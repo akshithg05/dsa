@@ -42,6 +42,46 @@ var strStr = function (haystack, needle) {
 };
 
 // Knuth- Morris - Pratt algorithm
+var strStr = function (haystack, needle) {
+  let i = 0;
+  let j = 1;
+  let lps = [0];
+  let n = haystack.length;
+  let m = needle.length;
+  while (j < m) {
+    if (needle[j] === needle[i]) {
+      lps[j] = i + 1;
+      i++;
+      j++;
+    } else {
+      if (i === 0) {
+        lps[j] = 0;
+        j++;
+      } else {
+        i = lps[i - 1];
+      }
+    }
+  }
+
+  i = 0;
+  j = 0;
+  while (i < n) {
+    if (needle[j] === haystack[i]) {
+      i++;
+      j++;
+    } else {
+      if (j === 0) {
+        i++;
+      } else {
+        j = lps[j - 1];
+      }
+    }
+    if (j === m) {
+      return i - m;
+    }
+  }
+  return -1;
+};
 
 console.log(findIndex("sadbutsad", "sad"));
 console.log(findIndex("leetcode", "leeto"));
